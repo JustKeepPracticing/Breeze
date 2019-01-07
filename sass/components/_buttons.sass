@@ -1,0 +1,75 @@
+//.nav-btn--close
+//  float: right
+//  +transition(all .2s ease-in-out)
+//  span
+//    position: relative
+//    width: 1.93rem
+//    height: .37rem
+//    background-color: $clr-primary-dark
+//    display: block
+//    +border-radius(5px)
+//    &:nth-child(1)
+//      +transform(rotate(45deg))
+//      transform-origin: 5px 3px
+//    &:nth-child(2)
+//      +transform(rotate(-45deg))
+//      transform-origin: .93rem .43rem
+
+.home__subscribe-btn,
+.home__explore-btn
+  position: relative
+  &:before
+    content: ""
+    position: absolute
+    width: 100%
+    height: 1px
+    bottom: 0
+    left: 0
+    background-color: $clr-primary-dark
+    visibility: hidden
+    +transform(scaleX(0))
+    +transition(all .4s ease-in-out)
+    +transform-origin(left)
+  &:hover
+    &:before
+      visibility: visible
+      +transform(scaleX(1))
+
+.home__subscribe-btn
+  margin-right: 3.1875rem
+
+.contact__form__btn
+  float: right
+  height: 2.6875rem
+  width: 9.375rem
+  background: transparent
+  text-transform: uppercase
+  font-size: $font-size-xs
+  font-family: $roboto-reg
+  border: 1px solid $clr-primary-dark
+  +box-shadow(0 1px 3px rgba(0, 0, 0, .2))
+  margin-top: 4.25rem
+  &:hover
+    background-color: $clr-primary-dark
+    color: $clr-primary-light
+    cursor: pointer
+  &:focus
+    outline: none
+
+.subscribe-modal__btn
+  @extend .contact__form__btn
+  float: none
+  margin-top: 0
+  &:focus
+    outline: none
+
+.subscribe-modal
+  .closeBtn
+    float: right
+    border: none
+    background-color: transparent
+    font-size: $font-size-s
+    &:focus
+      outline: none
+    &:hover
+      cursor: pointer

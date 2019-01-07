@@ -1,0 +1,101 @@
+.home
+  +grid
+  grid-template-areas: "hero welcome"
+  grid-template-columns: repeat(2, 1fr)
+  @media #{$tablet}
+    grid-template-areas: "hero hero" "welcome welcome"
+    grid-template-columns: repeat(1, 1fr)
+
+.home__hero-wrapper
+  background-image: url("../img/home-hero-bg.jpeg")
+  background-repeat: no-repeat
+  background-size: cover
+  width: 100%
+  height: 100vh
+  position: relative
+  grid-area: hero
+  +flexbox
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  &:after
+    position: absolute
+    content: ''
+    width: 100%
+    height: 100vh
+    top: 0
+    left: 0
+    background-color: rgba(0, 0, 0, .6)
+    z-index: 1
+  h4
+    color: $clr-primary-light
+    z-index: 2
+    position: relative
+    font-family: $roboto-reg
+    font-weight: 400
+
+.home__hero-wrapper__countdown
+  position: relative
+  z-index: 2
+  span
+    color: $clr-primary-light
+    font-family: $roboto-light
+    font-style: italic
+    +letter-space(.04em)
+    @media only screen and (max-width: 360px) and (min-width: 320px)
+      font-size: .9rem
+    &:first-of-type
+      font-size: $font-size-l
+      font-family: $merienda-bold
+      margin-bottom: .8rem
+      @media #{$mobileXs}
+        font-size: $font-size-s
+
+  .timer
+    +flexbox
+    justify-content: center
+    align-items: center
+    > div
+      flex-direction: column
+      +flexbox
+      justify-content: center
+      align-items: center
+      margin: 0 1rem 0 1rem
+
+.home__welcome-wrapper
+  background-color: $clr-primary-light
+  padding: 2rem 3rem  0 3rem
+  grid-area: welcome
+  @media #{$tablet}
+    padding: 2rem
+
+.home__pseudo-header
+  +flexbox
+  justify-content: space-between
+  align-items: center
+
+.home__welcome-wrapper__content
+  color: $clr-primary-dark
+  margin-top: 10.875rem
+  a
+    color: $clr-primary-dark
+    @extend %fade-60
+    &:hover
+      opacity: 1
+
+.home__welcome-wrapper--short-description
+  margin-bottom: 3.875rem
+  h4
+    +line-height(28px)
+  p
+    +line-height(25px)
+
+.home__social
+  +flexbox
+  align-items: baseline
+  a:not(:nth-last-of-type(1))
+    margin-right: .8rem
+  .home__social--text
+    margin-right: 3rem
+
+

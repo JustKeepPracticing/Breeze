@@ -1,0 +1,110 @@
+.home__nav-wrapper
+  right: -50%
+  width: 50%
+  top: 0
+  padding: 1.8rem 6rem 0 0
+  +transition(.5s linear)
+  background-color: $clr-primary-light
+  z-index: 2
+  height: 100%
+  visibility: hidden
+  ul
+    +letter-space(.04em)
+    float: right
+    padding: 4.8rem 6.6rem 0 0
+    li
+      @extend %fade-60
+      font-family: $roboto-reg
+      font-size: $font-size-l
+      +transition(all .5s ease-in-out)
+      +transform(translateX(22rem))
+      opacity: 0
+      &:not(:nth-last-of-type(1))
+        margin-bottom: 3.4rem
+      a
+        color: $clr-primary-dark
+  @media #{$tablet}
+    right: -100%
+    width: 100%
+  @media #{$mobileXs}
+    padding: 0
+
+.home__welcome-wrapper--nav
+  position: relative
+  input:checked
+    ~ .home__nav-wrapper
+      right: 0
+      visibility: visible
+    + label span
+      z-index: 3
+    + label .hamburger-item-one
+      +transform(rotate(45deg))
+    + label .hamburger-item-two
+      +transform(rotate(-45deg))
+    + label .hamburger-item-three
+      +transform(rotate(45deg))
+
+#hamburger-menu
+  width: 100%
+  height: 29px
+  position: absolute
+  opacity: 0
+  top: .7rem
+  z-index: 4
+  + label span
+    width: 1.93rem
+    height: .37rem
+    position: relative
+    top: 11px
+    left: 0
+    background-color: $clr-primary-dark
+    display: block
+    +border-radius(3px)
+    +transition(0.5s cubic-bezier(0.77,0.2,0.05,1.0))
+  + label .hamburger-item-one
+    +transform-origin(5px 3px)
+  + label .hamburger-item-two
+    +transform-origin(9px 5px)
+  + label .hamburger-item-one, + label  .hamburger-item-three
+    width: 1.06rem
+    height: .37rem
+    background-color: $clr-primary-dark
+    display: block
+    +border-radius(3px)
+  + label .hamburger-item-three
+    margin-left: .87rem
+  + label span:not(:nth-last-of-type(1))
+    margin-bottom: 5px
+  &:checked
+    + label .hamburger-item-one
+      width: 1.93rem !important
+    + label .hamburger-item-three
+      display: none
+    ~ .home__nav-wrapper ul
+      li
+        transform: translateX(0rem)
+        &:nth-of-type(1)
+          opacity: .6
+        &:nth-of-type(2)
+          transition-delay: .2s
+          opacity: .6
+        &:nth-of-type(3)
+          transition-delay: .4s
+          opacity: .6
+        &:nth-of-type(4)
+          transition-delay: .5s
+          opacity: .6
+        &:hover
+          opacity: 1
+          +transform(translateX(.9rem))
+          +transition(.2s linear)
+
+@media #{$tablet}
+  #hamburger-menu
+    &:checked + label
+      position: fixed
+      z-index: 99999
+      top: 8px
+      right: 8px
+
+

@@ -1,0 +1,21 @@
+.contact
+  +grid
+  grid-template-areas: "map form"
+  grid-template-columns: repeat(2, 1fr)
+  @media #{$tablet}
+    grid-template-areas: "map map" "form form"
+    grid-template-rows: repeat(2, 1fr)
+    grid-template-columns: repeat(1, 1fr)
+
+.contact__map--wrapper
+  grid-area: map
+
+.contact__form--wrapper
+  grid-area: form
+  margin: auto
+  padding: 3rem 3rem 2rem 3rem
+  @media only screen and (max-width: 360px) and (min-width: 320px)
+    padding: 0
+
+
+

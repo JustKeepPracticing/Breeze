@@ -1,0 +1,33 @@
+.subscribe-modal
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  width: 100%
+  max-width: 29.6875rem
+  margin: 7.5rem auto
+  z-index: 2
+  +transform(translateY(-100%))
+  opacity: 0
+  transition: transform 1s ease-out, opacity .3s ease-out
+
+.modal--show
+  +transform(translateY(0))
+  opacity: 1
+
+.modal__body
+  padding-top: 2.5rem
+  p
+    font-size: $font-size-base
+    font-family: $roboto-light
+    font-style: italic
+    line-height: 28px
+
+.subscribe-modal__content
+  background-color: $clr-primary-light
+  padding: 1.625rem 4rem 3.4375rem 4rem
+
+
+
+
