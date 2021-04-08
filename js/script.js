@@ -17,7 +17,7 @@ function initMap() {
     var marker = new google.maps.Marker({position: yerevan, map: map});
 }
 
-const countDownDate = new Date("Oct 4, 2019 22:55:25").getTime();
+const countDownDate = new Date("Dec 4, 2021 22:55:25").getTime();
 
 let timer = setInterval(function() {
 
